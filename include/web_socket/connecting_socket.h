@@ -1,8 +1,7 @@
 #ifndef CONNECTING_SOCKET_H_INCLUDED
 #define CONNECTING_SOCKET_H_INCLUDED
 
-#include <stdio.h>
-#include <include/web_socket/binding_socket.h>
+#include "./binding_socket.h"
 
 namespace WEB_SOCKET {
 

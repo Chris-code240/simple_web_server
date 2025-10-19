@@ -2,7 +2,7 @@
 #define WEB_SOCKET_H_INCLUDED
 
 #include <stdio.h>
-#include <winsock.h>
+#include <winsock2.h>
 #include <WS2tcpip.h>
 #include <iostream>
 
@@ -22,7 +22,7 @@ class SimpleSocket {
         virtual int connect_to_network(int sock, struct sockaddr_in address) = 0;
 
         // functio to test socket and connection
-        void test_connection(int);
+        void test_connection(int item_to_test);
 
         //getter functions
         struct sockaddr_in get_address();

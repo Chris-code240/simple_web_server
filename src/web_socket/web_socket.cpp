@@ -1,5 +1,5 @@
 
-#include <include/web_socket/web_socket.h>
+#include "../../include/web_socket/web_socket.h"
 
 // Default constructor
 WEB_SOCKET::SimpleSocket::SimpleSocket( int domain, int service, int protocol, int port, u_long interface_ ){
@@ -7,8 +7,8 @@ WEB_SOCKET::SimpleSocket::SimpleSocket( int domain, int service, int protocol, i
 
     //Define address strcuture
     address.sin_family = domain;
-    address.sin_port = htons(port);
-    address.sin_addr.s_addr = htons(interface_);
+    address.sin_port = htonl(port);
+    address.sin_addr.s_addr = htonl(interface_);
 
     // Bind address to socket
 
