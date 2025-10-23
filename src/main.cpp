@@ -4,9 +4,10 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
-#include "../include/web_socket/binding_socket.h"
 
-using namespace WEB_SOCKET;
+#include "../include/server/simple_server.h"
+
+using namespace WEB_SERVER;
 
 
 int main(){
@@ -18,12 +19,7 @@ int main(){
         return EXIT_FAILURE;
     }
 
-    BindingSocket  _socket (AF_INET, SOCK_STREAM, 0, 8080, INADDR_ANY);
-    int s = socket(AF_INET, SOCK_STREAM, 0);
-    if (s < 0) {
-        std::cout << "socket() failed: " << strerror(errno) << std::endl;
-    }
-
-
+    WebServer _server(AF_INET, SOCK_STREAM, 0, 8080, INADDR_ANY, 1);
+    _server.launch();
     return EXIT_SUCCESS;
 }
